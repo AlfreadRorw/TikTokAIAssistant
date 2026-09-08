@@ -3,4 +3,5 @@
 local.properties
 /build/
 app/build/
-*.iml
+backend/node_modules/
+backend/.env

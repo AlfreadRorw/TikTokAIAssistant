@@ -3,6 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven(url = "https://artifact.bytedance.com/repository/AwemeOpenSDK")
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +11,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://artifact.bytedance.com/repository/AwemeOpenSDK")
     }
 }
 rootProject.name = "TikTokAIAssistant"

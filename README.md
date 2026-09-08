@@ -1,23 +1,35 @@
-# TikTok AI Assistant
+# TikTok AI Assistant OAuth Template
 
-Android dashboard untuk mengelola AI chat assistant dan konfigurasi integrasi backend.
+Android + Node.js starter project.
 
-## Yang sudah ada
-- Dashboard bot ON/OFF
-- Conversation log UI
-- Pengaturan endpoint AI
-- Model AI
-- System prompt/personality
-- Reply delay
-- Penyimpanan pengaturan lokal
-- GitHub Actions untuk build APK otomatis
+## Includes
+- Android Jetpack Compose dashboard
+- TikTok Connect button
+- Backend OAuth starter
+- TikTok profile endpoint placeholder
+- GitHub Actions APK build
+- Java/Kotlin JVM 17 alignment
 
-## Yang sengaja tidak dipalsukan
-Project ini **belum bisa membaca atau mengirim DM TikTok secara langsung** tanpa integrasi resmi/otorisasi yang sesuai dari TikTok. Bagian itu harus dihubungkan ke backend dan akses API yang memang tersedia untuk akun/use case kamu.
+## Required before real TikTok login works
+Create a TikTok Developer application and configure Login Kit.
+Set these backend environment variables:
 
-## Build di GitHub
-Push semua file ke branch `main`, lalu buka:
-Actions -> Build Android APK -> Artifact `TikTok-AI-Assistant-debug`
+TIKTOK_CLIENT_KEY
+TIKTOK_CLIENT_SECRET
+TIKTOK_REDIRECT_URI
+SESSION_SECRET
 
-## Keamanan
-Jangan menyimpan API key produksi di aplikasi Android publik. Untuk produksi gunakan backend server sebagai perantara.
+The current TikTok Android Login Kit flow uses OAuth and PKCE. Authorization codes should be exchanged for tokens on the server.
+
+## Important
+This template intentionally does NOT embed a TikTok client secret in the APK and does NOT implement unofficial TikTok DM scraping/automation.
+
+## Build APK
+Push to GitHub branch main. GitHub Actions uploads:
+TikTok-AI-Assistant-APK
+
+## Backend
+cd backend
+npm install
+cp .env.example .env
+npm start
